@@ -34,7 +34,7 @@ class Repository {
   String name;
   Owner owner;
   String description;
-  var score;
+  double score;
 
   factory Repository.fromJson(Map<String, dynamic> json) => Repository(
         name: json["name"],
