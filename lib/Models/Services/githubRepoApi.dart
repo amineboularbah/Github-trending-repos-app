@@ -9,7 +9,6 @@ class GithubRepoApi {
     final response = await http.get(endpoint);
     // if the api responds with OK we parse the api response using repositoryFromJson
     if (response.statusCode == 200) {
-      print(response.body);
       return repositoryFromJson(response.body);
     }
     // By default return a RepositoryModel Object which has an empty array in its prop repositories
