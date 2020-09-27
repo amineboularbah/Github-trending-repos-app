@@ -30,11 +30,14 @@ class RepositoryItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            repoName,
+            // what does the ?? sign do ? Well it will try to show the value we gave it which is repoName and if it is null, it will show the string we provided to it (No Name)
+            repoName ?? 'No Name',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           Text(
             description ?? 'No Description',
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 16),
           ),
           Row(
@@ -46,9 +49,13 @@ class RepositoryItem extends StatelessWidget {
                       height: 20,
                       width: 20,
                       child: Image.network(
-                        '$ownerAvatar',
+                        '$ownerAvatar' ??
+                            'https://icon-library.com/images/person-image-icon/person-image-icon-6.jpg',
                         fit: BoxFit.contain,
                       )),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     ownerName,
                     style: TextStyle(fontSize: 16),

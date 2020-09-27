@@ -24,8 +24,8 @@ class _SplashScreenState extends State<SplashScreen> {
         .pushReplacement(MaterialPageRoute(builder: (_) => MainPage()));
   }
 
-  apiCall(_) {
-    repositories.fetchRepos(context);
+  apiCall(_) async{
+    await repositories.fetchRepos(context);
     moveToNextPage();
   }
 
