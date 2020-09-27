@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gemographyMobileChallenge/Views/Components/RepoItem.dart';
 
 class TrendingPage extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _TrendingPageState extends State<TrendingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('This is the trending page'),
+        child: RepositoryItem(),
       ),
     );
   }
