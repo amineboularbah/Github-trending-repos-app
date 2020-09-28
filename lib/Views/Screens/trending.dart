@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gemographyMobileChallenge/Models/Core/RepoModel.dart';
 import 'package:gemographyMobileChallenge/Models/Services/repositories.dart';
@@ -50,8 +51,12 @@ class _TrendingPageState extends State<TrendingPage> {
             ];
             return ListView.builder(
                 controller: scrollController,
-                itemCount: reposList.length,
+                itemCount: reposList.length + 1,
                 itemBuilder: (_, index) {
+                  if (index == reposList.length) {
+                    return Container(
+                        height: 100, child: CupertinoActivityIndicator());
+                  }
                   Repository repository = reposList[index];
                   return RepositoryItem(
                     repoName: repository.name,
