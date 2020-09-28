@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RepositoryItem extends StatelessWidget {
@@ -46,13 +48,16 @@ class RepositoryItem extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                      height: 20,
-                      width: 20,
-                      child: Image.network(
-                        '$ownerAvatar' ??
-                            'https://icon-library.com/images/person-image-icon/person-image-icon-6.jpg',
-                        fit: BoxFit.contain,
-                      )),
+                    height: 20,
+                    width: 20,
+                    child: CachedNetworkImage(
+                      imageUrl: '$ownerAvatar' ??
+                          'https://icon-library.com/images/person-image-icon/person-image-icon-6.jpg',
+                      placeholder: (context, url) =>
+                          CupertinoActivityIndicator(),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                    ),
+                  ),
                   SizedBox(
                     width: 10,
                   ),
