@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gemographyMobileChallenge/utilities/constants.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class RepositoryItem extends StatelessWidget {
   final String repoName;
@@ -12,6 +14,7 @@ class RepositoryItem extends StatelessWidget {
   final String ownerAvatar;
   final String updatedAt;
   final int starsNumber;
+  final String language;
 
   const RepositoryItem(
       {Key key,
@@ -21,13 +24,14 @@ class RepositoryItem extends StatelessWidget {
       this.ownerAvatar,
       this.starsNumber,
       this.updatedAt,
-      this.fullName})
+      this.fullName,
+      this.language})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     String latestUpdateTime = getLatestDateTime();
     return Container(
-        height: MediaQuery.of(context).size.height / 3.5,
+        height: MediaQuery.of(context).size.height / 3.2,
         padding: EdgeInsets.fromLTRB(20, 15, 20, 20),
         margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
         decoration: BoxDecoration(
@@ -76,11 +80,13 @@ class RepositoryItem extends StatelessWidget {
               top: 10,
               child: Text(
                 '$latestUpdateTime',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    fontSize: 16),
               ),
             ),
             Positioned(
-              top: 70,
+              top: 55,
               child: SizedBox(
                 height: 1,
                 width: MediaQuery.of(context).size.width,
@@ -91,7 +97,7 @@ class RepositoryItem extends StatelessWidget {
               ),
             ),
             Positioned(
-                top: 80,
+                top: 70,
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.2,
                   child: Column(
@@ -106,26 +112,97 @@ class RepositoryItem extends StatelessWidget {
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 5,
                       ),
                       Text(
                         description ?? 'No Description',
-                        maxLines: 3,
+                        maxLines: 2,
                         softWrap: true,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 16),
+                      ),
+                      SizedBox(
+                        height: 25,
                       ),
                     ],
                   ),
                 )),
             Positioned(
-              bottom: 0,
-              child: Row(
-                children: [
-                  
-                ],
-              ),
-            )
+                bottom: 0,
+                child: Container(
+                  height: 60,
+                  width: MediaQuery.of(context).size.width / 1.25,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 15,
+                              width: 15,
+                              margin: EdgeInsets.fromLTRB(0, 10, 5, 10),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: languageColor.containsKey(language)
+                                      ? Hexcolor(languageColor[language])
+                                      : Theme.of(context).primaryColor),
+                            ),
+                            Text(language ?? 'None',
+                                style: TextStyle(
+                                    color: Theme.of(context)
+                                        .primaryColor
+                                        .withOpacity(0.4),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow[700],
+                            ),
+                            Text('$starsNumber' ?? '0',
+                                style: TextStyle(
+                                    color: Theme.of(context)
+                                        .primaryColor
+                                        .withOpacity(0.4),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.yellow[700].withOpacity(0.1)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow[700],
+                            ),
+                            Text(
+                              'Star',
+                              style: TextStyle(
+                                  color: Colors.yellow[700],
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
           ],
         ));
   }

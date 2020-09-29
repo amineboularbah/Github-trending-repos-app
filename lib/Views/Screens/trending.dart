@@ -66,6 +66,7 @@ class _TrendingPageState extends State<TrendingPage> {
                     ownerName: repository.owner.login,
                     starsNumber: repository.stargazersCount,
                     updatedAt: repository.updatedAt,
+                    language: repository.language,
                   );
                 });
           },
