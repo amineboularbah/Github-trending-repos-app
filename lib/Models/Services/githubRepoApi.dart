@@ -12,7 +12,7 @@ class GithubRepoApi {
     // if the api responds with OK we parse the api response using repositoryFromJson
     print(response.body);
     if (response.statusCode == 200) {
-      return repositoryFromJson(response.body);
+      return repositoryModelFromJson(response.body);
     }
     // By default return a RepositoryModel Object which has an empty array in its prop repositories
     return RepositoryModel(repositories: []);

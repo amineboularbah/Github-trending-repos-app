@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gemographyMobileChallenge/Provider/RepositoryProvider.dart';
+import 'package:gemographyMobileChallenge/Themes/Themes.dart';
 import 'package:gemographyMobileChallenge/Views/Screens/splash.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => RepoProvider(),
-      child: MaterialApp(home: SplashScreen()),
+      child: MaterialApp(theme: lightTheme(), home: SplashScreen()),
     );
   }
 }

@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-RepositoryModel repositoryFromJson(String str) =>
+RepositoryModel repositoryModelFromJson(String str) =>
     RepositoryModel.fromJson(json.decode(str));
 
-String repositoryToJson(RepositoryModel data) => json.encode(data.toJson());
+String repositoryModelToJson(RepositoryModel data) =>
+    json.encode(data.toJson());
 
 class RepositoryModel {
   RepositoryModel({
@@ -26,28 +27,39 @@ class RepositoryModel {
 class Repository {
   Repository({
     this.name,
+    this.fullName,
     this.owner,
     this.description,
-    this.score,
+    this.stargazersCount,
+    this.updatedAt,
+    this.language,
   });
 
   String name;
+  String fullName;
   Owner owner;
-  String description;
-  double score;
+  dynamic description;
+  int stargazersCount;
+  String updatedAt;
+  String language;
 
   factory Repository.fromJson(Map<String, dynamic> json) => Repository(
         name: json["name"],
+        fullName: json["full_name"],
         owner: Owner.fromJson(json["owner"]),
         description: json["description"],
-        score: json["score"],
+        stargazersCount: json["stargazers_count"],
+        updatedAt: json["updated_at"],
+        language: json["language"],
       );
 
   Map<String, dynamic> toJson() => {
         "name": name,
+        "full_name": fullName,
         "owner": owner.toJson(),
         "description": description,
-        "score": score,
+        "stargazers_count": stargazersCount,
+        "language": language,
       };
 }
 

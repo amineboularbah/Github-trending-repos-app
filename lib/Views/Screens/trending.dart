@@ -60,10 +60,12 @@ class _TrendingPageState extends State<TrendingPage> {
                   Repository repository = reposList[index];
                   return RepositoryItem(
                     repoName: repository.name,
+                    fullName: repository.fullName,
                     description: repository.description,
                     ownerAvatar: repository.owner.avatarUrl,
                     ownerName: repository.owner.login,
-                    score: repository.score,
+                    starsNumber: repository.stargazersCount,
+                    updatedAt: repository.updatedAt,
                   );
                 });
           },
