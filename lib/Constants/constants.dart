@@ -1,4 +1,3 @@
-
 const Map<String, String> languageColor = {
   "Mercury": "#ff2b2b",
   "TypeScript": "#2b7489",
@@ -199,3 +198,6 @@ const Map<String, String> languageColor = {
   "Dogescript": "#cca760",
   "nesC": "#94B0C7"
 };
+
+const API_URL =
+    'https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=';

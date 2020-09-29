@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gemographyMobileChallenge/Models/Core/RepoModel.dart';
 import 'package:gemographyMobileChallenge/Models/Services/githubRepoApi.dart';
+import 'package:gemographyMobileChallenge/main.dart';
 
 class RepoProvider extends ChangeNotifier {
+  int pageNumber = 0;
   GithubRepoApi githubRepoApi = GithubRepoApi();
   // We will initialize the initialRepository to an object of RepositoryModel with empty array in its prop repositories
   RepositoryModel initialRepository = RepositoryModel(repositories: []);
@@ -15,7 +17,9 @@ class RepoProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> fetchRepositories() async {
-    repositoryModel = await githubRepoApi.getGithubRepos();
+  Future<void> fetchRepositories(FetchType type) async {
+    type == FetchType.nextPage ? pageNumber++ : pageNumber = 1;
+    print(pageNumber);
+    repositoryModel = await githubRepoApi.getGithubRepos(pageNumber);
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gemographyMobileChallenge/Models/Services/repositories.dart';
+import 'package:gemographyMobileChallenge/Models/Helpers/Helper.dart';
 import 'package:gemographyMobileChallenge/Views/Screens/mainPage.dart';
+import 'package:gemographyMobileChallenge/main.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  Repositories repositories = Repositories();
+  Helpers helper = Helpers();
 
   @override
   void initState() {
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   apiCall(_) async{
-    await repositories.fetchRepos(context);
+    await helper.fetchRepos(context,FetchType.nextPage);
     moveToNextPage();
   }
 

@@ -1,13 +1,10 @@
+import 'package:gemographyMobileChallenge/Constants/constants.dart';
 import 'package:gemographyMobileChallenge/Models/Core/RepoModel.dart';
-import 'package:gemographyMobileChallenge/main.dart';
 import 'package:http/http.dart' as http;
 
 class GithubRepoApi {
-  String endpoint =
-      'https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=$pageNumber';
-
-  Future<RepositoryModel> getGithubRepos() async {
-    final response = await http.get(endpoint);
+  Future<RepositoryModel> getGithubRepos(int pageNumber) async {
+    final response = await http.get(API_URL + '$pageNumber');
     // if the api responds with OK we parse the api response using repositoryFromJson
     if (response.statusCode == 200) {
       return repositoryModelFromJson(response.body);

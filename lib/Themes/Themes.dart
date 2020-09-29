@@ -26,7 +26,7 @@ ThemeData darkTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
       primaryColor: Colors.black,
-      indicatorColor: Colors.white,
+      indicatorColor: Colors.black,
       cardColor: Color(0xff212121),
       scaffoldBackgroundColor: Color(0xff333333),
       canvasColor: Colors.white,
