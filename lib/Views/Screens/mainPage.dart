@@ -19,7 +19,6 @@ class _MainPageState extends State<MainPage> {
       ),
       body: pages.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
         currentIndex: selectedIndex,
         items: [
           BottomNavigationBarItem(

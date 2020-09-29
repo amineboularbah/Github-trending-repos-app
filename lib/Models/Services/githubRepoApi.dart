@@ -7,10 +7,8 @@ class GithubRepoApi {
       'https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=$pageNumber';
 
   Future<RepositoryModel> getGithubRepos() async {
-    print(pageNumber);
     final response = await http.get(endpoint);
     // if the api responds with OK we parse the api response using repositoryFromJson
-    print(response.body);
     if (response.statusCode == 200) {
       return repositoryModelFromJson(response.body);
     }

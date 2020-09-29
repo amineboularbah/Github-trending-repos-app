@@ -35,7 +35,7 @@ class RepositoryItem extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 20),
         margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.all(Radius.circular(8)),
           boxShadow: [
             BoxShadow(
@@ -70,7 +70,10 @@ class RepositoryItem extends StatelessWidget {
                   ),
                   Text(
                     ownerName,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).accentColor),
                   ),
                 ],
               ),
@@ -81,7 +84,7 @@ class RepositoryItem extends StatelessWidget {
               child: Text(
                 '$latestUpdateTime',
                 style: TextStyle(
-                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    color: Theme.of(context).accentColor.withOpacity(0.5),
                     fontSize: 16),
               ),
             ),
@@ -92,7 +95,7 @@ class RepositoryItem extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: Divider(
                   thickness: 1,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).canvasColor.withOpacity(0.5),
                 ),
               ),
             ),
@@ -106,20 +109,26 @@ class RepositoryItem extends StatelessWidget {
                     children: [
                       Text(
                         // what does the ?? sign do ? Well it will try to show the value we gave it which is repoName and if it is null, it will show the string we provided to it (No Name)
-                        fullName ?? 'No Name',
+                        fullName ?? 'No FullName',
                         overflow: TextOverflow.fade,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
+                            color: Theme.of(context).accentColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 10,
                       ),
                       Text(
                         description ?? 'No Description',
                         maxLines: 2,
                         softWrap: true,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color:
+                                Theme.of(context).accentColor.withOpacity(0.5),
+                            fontSize: 16),
                       ),
                       SizedBox(
                         height: 25,
@@ -152,7 +161,7 @@ class RepositoryItem extends StatelessWidget {
                             Text(language ?? 'None',
                                 style: TextStyle(
                                     color: Theme.of(context)
-                                        .primaryColor
+                                        .accentColor
                                         .withOpacity(0.4),
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold))
@@ -170,7 +179,7 @@ class RepositoryItem extends StatelessWidget {
                             Text('$starsNumber' ?? '0',
                                 style: TextStyle(
                                     color: Theme.of(context)
-                                        .primaryColor
+                                        .accentColor
                                         .withOpacity(0.4),
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold))
