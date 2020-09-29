@@ -6,7 +6,7 @@ This is a mobile coding challenge from gemography where we list the most starred
 
 ## Live demo
 
-![Gemography%20mobile%20coding%20challenge%206ed31a3d89094030b5bbeb683bb5fd39/ezgif.com-gif-maker.gif](Gemography%20mobile%20coding%20challenge%206ed31a3d89094030b5bbeb683bb5fd39/ezgif.com-gif-maker.gif)
+![https://media.giphy.com/media/ARfKsuKjaoeqjHGr1h/giphy.gif](https://media.giphy.com/media/ARfKsuKjaoeqjHGr1h/giphy.gif)
 
 # Technology used
 
