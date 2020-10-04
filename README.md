@@ -51,28 +51,28 @@ Read more about the Cached_network_image package at: [https://pub.dev/packages/c
 
 This package helps us convert date from a string into DateTime, i used it to convert the date of updating the repository from a String (which i receive from api) to DateTime.
 
-Read more about the Cached_network_image package at: [https://pub.dev/packages/date_format](https://pub.dev/packages/date_format)
+Read more about the date_format package at: [https://pub.dev/packages/date_format](https://pub.dev/packages/date_format)
 
 ## hexcolor
 
 hex color plugin allows you to add hex color codes to your flutter projects
 
-Read more about the Cached_network_image package at: [https://pub.dev/packages/hexcolor](https://pub.dev/packages/hexcolor)
+Read more about the hexcolor package at: [https://pub.dev/packages/hexcolor](https://pub.dev/packages/hexcolor)
 
 ## auto_size_text
 
 Flutter widget that automatically resizes text to fit perfectly within its bounds.
 
-Read more about the Cached_network_image package at: [https://pub.dev/packages/auto_size_text](https://pub.dev/packages/auto_size_text)
+Read more about the auto_size_text package at: [https://pub.dev/packages/auto_size_text](https://pub.dev/packages/auto_size_text)
 
 ## flutter_spinkit
 
 A collection of loading indicators animated with flutter.
 
-Read more about the Cached_network_image package at: [https://pub.dev/packages/flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
+Read more about the flutter_spinkit package at: [https://pub.dev/packages/flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 
 ## toggle_switch
 
 A simple toggle switch widget. It can be fully customized with desired icons, width, colors, text, corner radius etc. It also maintains selection state.
 
-Read more about the Cached_network_image package at: [https://pub.dev/packages/hexcolor](https://pub.dev/packages/toggle_switch)
+Read more about the toggle_switch package at: [https://pub.dev/packages/hexcolor](https://pub.dev/packages/toggle_switch)
