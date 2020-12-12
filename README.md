@@ -1,8 +1,6 @@
-# Gemography mobile coding challenge
-
 # The idea
 
-This is a mobile coding challenge from gemography where we list the most starred Github repos that were created in the last 30 days by fetching data from the github api using the endpoint given in the [readme](http://readme.md) file.
+list the most starred Github repos that were created in the last 30 days by fetching data from the github api.
 
 ## Live demo
 
@@ -10,7 +8,7 @@ This is a mobile coding challenge from gemography where we list the most starred
 
 # Technology used
 
-For this challenge, I used Flutter, which is an open-source UI toolkit from Google for crafting beautiful, natively compiled applications for desktop, web, and mobile from a single codebase. Flutter apps are built using the Dart programming language.
+I used Flutter, which is an open-source UI toolkit from Google for crafting beautiful, natively compiled applications for desktop, web, and mobile from a single codebase. Flutter apps are built using the Dart programming language.
 
 # How to run the app ?
 
