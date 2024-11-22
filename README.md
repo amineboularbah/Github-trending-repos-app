@@ -1,76 +1,81 @@
-# The idea
+# ⭐ Trending GitHub Repositories
 
-list the most starred Github repos that were created in the last 30 days by fetching data from the github api.
+This app lists the most starred GitHub repositories created in the last 30 days by fetching data from the GitHub API. The goal is to provide an intuitive and responsive interface for exploring trending repositories with useful information about each project.
 
-## Live demo
+---
 
-![https://media.giphy.com/media/GgeZhEjctaL37C2ONP/giphy.gif](https://media.giphy.com/media/GgeZhEjctaL37C2ONP/giphy.gif)
+## 🌟 Live Demo
 
-# Technology used
+![Demo](https://media.giphy.com/media/GgeZhEjctaL37C2ONP/giphy.gif)
 
-I used Flutter, which is an open-source UI toolkit from Google for crafting beautiful, natively compiled applications for desktop, web, and mobile from a single codebase. Flutter apps are built using the Dart programming language.
+---
 
-# How to run the app ?
+## 🚀 Technology Used
 
-- Install Flutter from [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
-- Install an emulator/simulator or use a physical device.
-- clone the repository.
-- Open the project in your favorite IDE.
-- Add Flutter plugin to your IDE.
-- Get the packages used in this projects by running the following command ******`flutter packages get`
-- In case your running it on an emulator make sure to accept the android sdk liscence.
-- Run your project using `flutter run`.
+This project is built using **Flutter**, Google's open-source UI toolkit for crafting high-performance, natively compiled applications for mobile, web, and desktop from a single codebase. Flutter apps are written in the **Dart** programming language, making it ideal for building scalable and efficient applications.
 
-# Packages used
+---
 
-## http
+## 🛠️ How to Run the App
 
-This package helps us to make http requests, we used it to get the data from the github api.
+1. **Install Flutter**: Follow the instructions at [Flutter Install Guide](https://flutter.dev/docs/get-started/install).
+2. **Set Up Emulator/Device**:
+   - Install an emulator/simulator.
+   - Or connect a physical device with USB debugging enabled.
+3. **Clone the Repository**:  
+   Run `git clone <repository-url>` to clone the project locally.
+4. **Open in Your IDE**:
+   - Use any IDE that supports Flutter (e.g., **VS Code** or **Android Studio**).
+   - Install the Flutter and Dart plugins in your IDE.
+5. **Install Dependencies**:  
+   Run `flutter packages get` in the project directory to install required dependencies.
+6. **Accept Android SDK License**:  
+   If using an Android emulator, ensure the licenses are accepted by running:  
+   `flutter doctor --android-licenses`.
+7. **Run the App**:  
+   Use the `flutter run` command to launch the app on your device or emulator.
 
-Read more about the http package at: [https://pub.dev/packages/http](https://pub.dev/packages/http)
+---
 
-## Provider
+## 📦 Packages Used
 
-Provider is a simple app state management, it works works on the concept of SUB/PUB, which means there is one publisher which we call a provider and multiple subscribers which we call Consumers.
+### 1. [http](https://pub.dev/packages/http)
+Used to make HTTP requests to the GitHub API and fetch repository data.
 
-We could handle our state changes using the technique lifting state up but this approach doesn't scale well and requires a lot of boilerplate code and it's inneficient because it causes too many unnecessary rebuilds, that's why we use provider to manage our app state so whenever there is a change, calling the notifyListeners method will notify and update all the consumers.
+### 2. [provider](https://pub.dev/packages/provider)
+State management for the app, reducing boilerplate code and ensuring efficient rebuilding of UI components.
 
-Read more about the Provider package at: [https://pub.dev/packages/provider](https://pub.dev/packages/provider)
+### 3. [cached_network_image](https://pub.dev/packages/cached_network_image)
+Optimizes image loading by caching images from the API response, reducing internet usage and improving performance.
 
-## Cached_network_image
+### 4. [date_format](https://pub.dev/packages/date_format)
+Converts date strings from the API to `DateTime` objects for better formatting and manipulation.
 
-We used this package to keep the iamges we get from the api response in the cache using flutter_cache_manager package, that way, while running the app we won't load the images that are already loaded before, but we will get them just from the cache which wins us time and show the image fast and also it's a good optimization for the user internet.
+### 5. [hexcolor](https://pub.dev/packages/hexcolor)
+Allows the use of hex color codes in Flutter projects for precise color customization.
 
-This packages helps us show a loadingIndicator as a placeholder while the image is being loaded.
+### 6. [auto_size_text](https://pub.dev/packages/auto_size_text)
+Automatically resizes text to fit within its bounds, ensuring the UI remains consistent across devices.
 
-Read more about the Cached_network_image package at: [https://pub.dev/packages/cached_network_image](https://pub.dev/packages/cached_network_image)
+### 7. [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
+Provides a variety of loading indicators to enhance the user experience.
 
-## date_format
+### 8. [toggle_switch](https://pub.dev/packages/toggle_switch)
+A customizable toggle switch widget used for interactive UI elements.
 
-This package helps us convert date from a string into DateTime, i used it to convert the date of updating the repository from a String (which i receive from api) to DateTime.
+---
 
-Read more about the date_format package at: [https://pub.dev/packages/date_format](https://pub.dev/packages/date_format)
+## ✨ Features
 
-## hexcolor
+- **Trending Repositories**: View a list of the most starred GitHub repositories created in the last 30 days.
+- **Optimized UI**: Smooth and responsive interface with placeholder loading indicators and cached images.
+- **State Management**: Efficiently handles app state with `provider`.
+- **Customizable**: Built with reusable components for future scalability and customization.
 
-hex color plugin allows you to add hex color codes to your flutter projects
+---
 
-Read more about the hexcolor package at: [https://pub.dev/packages/hexcolor](https://pub.dev/packages/hexcolor)
+## 🧑‍💻 About Me
 
-## auto_size_text
+I am a **Senior Mobile Developer** with expertise in crafting efficient and scalable applications. With a strong foundation in **native iOS, Android, and cross-platform frameworks like Flutter**, I enjoy tackling challenging problems and building solutions that deliver great user experiences.
 
-Flutter widget that automatically resizes text to fit perfectly within its bounds.
-
-Read more about the auto_size_text package at: [https://pub.dev/packages/auto_size_text](https://pub.dev/packages/auto_size_text)
-
-## flutter_spinkit
-
-A collection of loading indicators animated with flutter.
-
-Read more about the flutter_spinkit package at: [https://pub.dev/packages/flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
-
-## toggle_switch
-
-A simple toggle switch widget. It can be fully customized with desired icons, width, colors, text, corner radius etc. It also maintains selection state.
-
-Read more about the toggle_switch package at: [https://pub.dev/packages/hexcolor](https://pub.dev/packages/toggle_switch)
+Feel free to connect and explore more about my work at [www.amineboularbah.com](https://www.amineboularbah.com).
